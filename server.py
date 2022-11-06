@@ -1,10 +1,10 @@
 import socket
 
-HOST ="127.0.0.1" #loopback interface can be empty to recieve from every interface
+HOST ="" #loopback interface can be empty to recieve from every interface
 PORT = 6344 #port to listen to
 
 with socket.socket(socket.AF_INET,socket.SOCK_STREAM) as s:
-    s.bind(HOST, PORT)
+    s.bind((HOST, PORT))
     s.listen()
     conn, addr = s.accept()
     with conn:
